@@ -2,7 +2,7 @@
     <form class="modal-component">
         <div class="modal-card" style="width: auto">
             <header class="modal-card-head">
-                <p class="modal-card-title">Choose date</p>
+                <p class="modal-card-title">Login</p>
             </header>
             <section class="modal-card-body">
                 <b-field label="Email">
