@@ -13,7 +13,10 @@
         Launch date picker modal component
       </button>
 
-      {{ selected_date }}
+      <div> {{ selected_date }} </div>
+         <div> {{ count }} </div>
+
+        <button class="button is-primary is-medium" @click="count++"/>
     </div>
   </section>
 </template>
@@ -25,13 +28,12 @@ import DatePickerModalComponent from '~/components/DatePickerModalComponent'
 
 export default {
   name: 'HomePage',
-  props: {
-            selected_date: {
-                type: Date,
-                required: true
-            },
-        },
-
+  data: function () {
+    return {
+      selected_date: new Date(),
+        count: 0
+    }
+  },
   components: {
     Card
   },
@@ -47,7 +49,7 @@ export default {
     launchDatePickerModal() {
             let self = this;
             this.$modal.open({
-                parent: this,
+                parent: self,
                 component: DatePickerModalComponent,
                 hasModalCard: true,
                 events: {

@@ -14,7 +14,10 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button" type="button" @click="$parent.close()">Cancel</button>
-                <button class="button is-primary" @click="changeDate();$parent.close();">Change Date</button>
+                <button class="button is-primary" @click.prevent="changeDate();$parent.close();">
+                    <!--This .prevent is needed so as not to re-render the entire parent page! -->
+                    Change Date
+                </button>
             </footer>
         </div>
     </form>
