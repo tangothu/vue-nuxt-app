@@ -25,12 +25,15 @@
 
 <script>
     export default {
-        props: {
-            my_date: {
-                type: Date,
-                required: false
-            },
-        },
+        data: function () {
+            return {
+              my_date: new Date(),
+            }
+          },
+        // No need to use my_date as prop here, as this prop is not passed from parent
+        // otherwise will see [Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders.
+        // Instead, use a data or computed property based on the prop's value. Prop being mutated: "my_date"
+
         methods: {
             changeDate() {
                 this.$emit('modalChangeDate', this.my_date);

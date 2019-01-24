@@ -1,22 +1,23 @@
 <template>
   <section class="section">
     <div class="columns">
-      <button class="button is-primary is-medium"
-        @click="launchLoginModal()">
-        Launch login modal component
-      </button>
-
-      <div class="divider"/>
 
       <button class="button is-primary is-medium"
         @click="launchDatePickerModal()">
         Launch date picker modal component
       </button>
 
-      <div> {{ selected_date }} </div>
-         <div> {{ count }} </div>
-
-        <button class="button is-primary is-medium" @click="count++"/>
+    </div>
+      <br>
+    <div class="columns">
+      <b-field>Date selected:</b-field>
+        <div class="divider"/>
+      <b-datepicker
+            v-model="selected_date"
+            icon="today"
+            placeholder="DD-MMM-YYYY"
+            :date-formatter="dateFormatter">
+        </b-datepicker>
     </div>
   </section>
 </template>
@@ -31,7 +32,6 @@ export default {
   data: function () {
     return {
       selected_date: new Date(),
-        count: 0
     }
   },
   components: {
@@ -59,6 +59,10 @@ export default {
                 }
             })
         },
+    dateFormatter(dt){
+        let dateoptions = { year: 'numeric', month: 'short', day: 'numeric' };
+        return dt.toLocaleDateString('en-GB', dateoptions);
+      },
   }
 }
 </script>
