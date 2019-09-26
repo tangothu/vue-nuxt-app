@@ -19,5 +19,6 @@
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "sass-loader": "^7.1.0"
-  }
+  },
+  "homepage": "http://tangothu.github.io/vue-nuxt-app"
 }

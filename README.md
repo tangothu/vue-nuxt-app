@@ -1,6 +1,6 @@
 # vue-nuxt-app
 
-> My beautiful Nuxt.js project that demos buefy component
+> My beautiful Nuxt.js project that demos buefy component. CI/CD uses Github Actions!
 
 ## Build Setup
 
